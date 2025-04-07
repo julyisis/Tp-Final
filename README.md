@@ -1,5 +1,7 @@
-# Tp-Final
-trabajo final en diseño web
-Roman Andres Coronel
-Mayra Rossetto
-Julieta Gutierrez
+# TP Final
+### Trabajo final en diseño web<br><br>
+#### Integrantes
+Roman Andres Coronel<br>
+Mayra Rossetto<br>
+Julieta Gutierrez<br>
+Gabriel Sebastian Roman
