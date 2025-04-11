@@ -4,5 +4,5 @@
 Roman Andres Coronel<br>
 Mayra Rossetto<br>
 Julieta Gutierrez<br>
-Gabriel Sebastian Roman
+Gabriel Sebastian Roman<br>
 Alejandro Petricic
