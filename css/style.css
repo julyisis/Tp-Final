@@ -11,6 +11,48 @@ body {
     color: #333;
 }
 
+/*Header*/
+header {
+    background-color: #5791cc;
+    color: #2c3e50;
+    padding: 30px 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+.logo{
+    width: 60px ;
+    height: auto;
+    margin-right: 15px;
+}
+header h1.tituloheader {
+    font-size: 3rem;
+}
+
+header nav ul.ulheader {
+    list-style: none;
+    font-size: 1.5rem;
+    margin-top: 10px;
+    display: flex;
+    justify-content: right;
+    gap: 20px;
+}
+
+header ul.ulheader li a.aheader{
+    text-decoration: none;
+    color: #ccc;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    margin: 5px;
+  
+}
+
+header ul.ulheader li a.aheader:hover {
+    color: #ffd700; 
+}
 /* Estilo para el contenedor general */
 .container {
     max-width: 1200px;
