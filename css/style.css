@@ -63,8 +63,8 @@ header ul.ulheader li a.aheader:hover {
 }
 
 /* Título principal */
-.container h1 {
-    font-size: 2.5rem;
+.container h2 {
+    font-size: 2rem;
     margin-bottom: 2rem;
     color: #ccc;
 }
