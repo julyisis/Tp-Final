@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!---
-    <link rel="stylesheet" href="./css/style-n.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/footer.css">
      -->
+
+    <link rel="stylesheet" href="./css/style-n.css">
+    
+    <!--- FontAwesome - Iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <!--- Bootstrap -->
@@ -28,47 +31,59 @@
         </nav>
     </header>
         <main>
-            <section class="about-section">
-                <div class="section-title">
-                    <h2>Sobre Nosotros</h2>
-                    <p>En IDW S.A, transformamos los sueños de cumpleaños infantiles en realidad con nuestros increíbles salones y servicios</p>
-                </div>
-                
-                <div class="about-content">
-                    <div class="about-image">
-                        <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Salón de fiestas infantiles">
+            <section class="about-section py-5">
+                <div class="container py-5">
+                    <div class="section-title text-center mb-5">
+                        <h2 class="display-4 mb-3">Sobre Nosotros</h2>
+                        <p class="lead mx-auto" style="max-width: 700px;">En IDW S.A, transformamos los sueños de cumpleaños infantiles en realidad con nuestros increíbles salones y servicios</p>
                     </div>
                     
-                    <div class="about-text">
-                        <h3>Tu aliado en la organización de fiestas infantiles</h3>
-                        <p>Fundada en 2010, IDW S.A se ha especializado en ofrecer la mejor experiencia en organización de cumpleaños infantiles. Nuestra plataforma conecta a las familias con los mejores salones y proveedores de servicios para fiestas.</p>
-                        <p>Con más de una década de experiencia, hemos ayudado a organizar más de 5,000 eventos infantiles, convirtiendo momentos especiales en recuerdos inolvidables.</p>
+                    <div class="row align-items-center g-5 mb-5">
+                        <div class="col-lg-6">
+                            <div class="about-image rounded-3 overflow-hidden shadow">
+                                <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Salón de fiestas infantiles" class="img-fluid w-100">
+                            </div>
+                        </div>
                         
-                        <div class="about-features">
-                            <div class="feature-box">
-                                <i class="fas fa-search"></i>
-                                <h4>Encuentra fácil</h4>
-                                <p>Filtra por ubicación, precio y características para hallar el salón perfecto</p>
-                            </div>
-                            
-                            <div class="feature-box">
-                                <i class="fas fa-hand-holding-usd"></i>
-                                <h4>Presupuesto claro</h4>
-                                <p>Obtén estimados instantáneos sin compromiso</p>
-                            </div>
-                            
-                            <div class="feature-box">
-                                <i class="fas fa-calendar-check"></i>
-                                <h4>Reserva simple</h4>
-                                <p>Agenda tu evento en pocos clicks, con confirmación inmediata</p>
+                        <div class="col-lg-6">
+                            <div class="about-text">
+                                <h3 class="fw-bold mb-4 display-6">Tu aliado en la organización de fiestas infantiles</h3>
+                                <p class="mb-4 fs-5">Fundada en 2010, IDW S.A se ha especializado en ofrecer la mejor experiencia en organización de cumpleaños infantiles. Nuestra plataforma conecta a las familias con los mejores salones y proveedores de servicios para fiestas.</p>
+                                <p class="mb-4 fs-5">Con más de una década de experiencia, hemos ayudado a organizar más de 5,000 eventos infantiles, convirtiendo momentos especiales en recuerdos inolvidables.</p>
+                                
+                                <div class="row g-4 mt-4">
+                                    <div class="col-md-4">
+                                        <div class="feature-box p-4 rounded-3 shadow-sm h-100">
+                                            <i class="fas fa-search mb-3 fs-1"></i>
+                                            <h4 class="fw-bold mb-3">Encuentra fácil</h4>
+                                            <p class="mb-0">Filtra por ubicación, precio y características para hallar el salón perfecto</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-4">
+                                        <div class="feature-box p-4 rounded-3 shadow-sm h-100">
+                                            <i class="fas fa-hand-holding-usd mb-3 fs-1"></i>
+                                            <h4 class="fw-bold mb-3">Presupuesto claro</h4>
+                                            <p class="mb-0">Obtén estimados instantáneos sin compromiso</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-4">
+                                        <div class="feature-box p-4 rounded-3 shadow-sm h-100">
+                                            <i class="fas fa-calendar-check mb-3 fs-1"></i>
+                                            <h4 class="fw-bold mb-3">Reserva simple</h4>
+                                            <p class="mb-0">Agenda tu evento en pocos clicks, con confirmación inmediata</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="kid-friendly">
-                    <h3>¡Diversión garantizada para los más pequeños!</h3>
-                    <p>En IDW S.A entendemos lo importante que es el cumpleaños de tu hijo. Por eso trabajamos exclusivamente con salones y proveedores que comparten nuestra filosofía de seguridad, creatividad y diversión infantil. Desde temáticas personalizadas hasta animadores profesionales, hacemos que cada fiesta sea única.</p>
+                    
+                    <div class="kid-friendly p-5 rounded-3 mt-5 text-center">
+                        <h3 class="fw-bold mb-4 display-5">¡Diversión garantizada para los más pequeños!</h3>
+                        <p class="mb-0 fs-5 mx-auto" style="max-width: 800px;">En IDW S.A entendemos lo importante que es el cumpleaños de tu hijo. Por eso trabajamos exclusivamente con salones y proveedores que comparten nuestra filosofía de seguridad, creatividad y diversión infantil. Desde temáticas personalizadas hasta animadores profesionales, hacemos que cada fiesta sea única.</p>
+                    </div>
                 </div>
             </section>
         </main>
