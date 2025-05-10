@@ -1,52 +1,43 @@
-footer {
-    background-color: #333;
-    color: #f1f1f1;
-    padding: 40px 20px;
-    font-family: Arial, sans-serif;
-  }
-  
-  .footer-content {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-  
-  .footer-content div {
-    flex: 1;
-    min-width: 200px;
-    margin: 10px;
-  }
-  
-  .footer-content h4 {
-    font-size: 18px;
-    margin-bottom: 15px;
-    color: #ffffff;
-  }
-  
-  .footer-content ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .footer-content ul li {
-    margin-bottom: 10px;
-  }
-  
-  .footer-content ul li a {
-    color: #ccc;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .footer-content ul li a:hover {
-    color: #fff;
-  }
-  
-  copyright {
-    text-align: center;
-    margin-top: 30px;
-    font-size: 14px;
-    color: #aaa;
-  }
+<footer class="bg-dark text-light py-5">
+  <div class="container">
+    <div class="row">
+      <!-- Sección 1: Sobre Nosotros -->
+      <div class="col-md-4 mb-4">
+        <h4 class="text-white">Sobre Nosotros</h4>
+        <img src="https://images.pexels.com/photos/3661352/pexels-photo-3661352.jpeg" alt="Salón de fiestas infantiles" class="img-fluid rounded mb-3">
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-secondary text-decoration-none">Nuestra Historia</a></li>
+          <li><a href="#" class="text-secondary text-decoration-none">Eventos Realizados</a></li>
+          <li><a href="#" class="text-secondary text-decoration-none">Valores</a></li>
+        </ul>
+      </div>
+
+      <!-- Sección 2: Servicios -->
+      <div class="col-md-4 mb-4">
+        <h4 class="text-white">Servicios</h4>
+        <img src="https://images.pexels.com/photos/5705490/pexels-photo-5705490.jpeg" alt="Juegos para chicos" class="img-fluid rounded mb-3">
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-secondary text-decoration-none">Cumpleaños</a></li>
+          <li><a href="#" class="text-secondary text-decoration-none">Animaciones</a></li>
+          <li><a href="#" class="text-secondary text-decoration-none">Decoración temática</a></li>
+        </ul>
+      </div>
+
+      <!-- Sección 3: Contacto -->
+      <div class="col-md-4 mb-4">
+        <h4 class="text-white">Contacto</h4>
+        <img src="https://images.pexels.com/photos/7750910/pexels-photo-7750910.jpeg" alt="Contacto con el salón" class="img-fluid rounded mb-3">
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-secondary text-decoration-none">WhatsApp</a></li>
+          <li><a href="#" class="text-secondary text-decoration-none">Email</a></li>
+          <li><a href="#" class="text-secondary text-decoration-none">Cómo llegar</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="text-center mt-4 text-muted">
+      &copy; 2025 Mundo Mágico. Todos los derechos reservados.
+    </div>
+  </div>
+</footer>
+
