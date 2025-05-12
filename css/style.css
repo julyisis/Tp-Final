@@ -11,7 +11,7 @@ body {
     color: #333;
 }
 
-/*Header*/
+/* Header */
 header {
   background-color: #5791cc;
   color: #2c3e50;
@@ -21,36 +21,51 @@ header {
   padding: 30px 20px;
 }
 
-.logo{
-    width: 60px ;
-    height: auto;
-    margin-right: 15px;
+.logo {
+  width: 60px;
+  height: auto;
+  margin-right: 15px;
 }
+
 .tituloheader {
-    font-size: 3rem;
-    font-weight: bold;
+  font-size: 3rem;
+  font-weight: bold;
 }
 
 .ulheader {
-    list-style: none;
-    font-size: 1.5rem;
-    align-items: center;
+  list-style: none;
+  font-size: 1.5rem;
+  align-items: center;
 }
 
 .custom-nav-link {
-    text-decoration: none;
-    color: #fff;  
-    font-weight: bold;
-    font-size: 1.25rem;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.25rem;
+  transition: color 0.3s ease;
 }
 
 .custom-nav-link:hover {
-    color: #ffd700 !important;  
+  color: #ffd700 !important;
 }
 
+/* Responsive menú hamburguesa */
+@media (max-width: 991.98px) {
+  .navbar {
+    align-items: center;
+  }
 
+  .navbar-collapse .nav {
+    flex-direction: column !important;
+    align-items: left;
+    width: 100%;
+  }
 
+  .navbar-collapse .nav-item {
+    padding: 10px 0;
+  }
+}
 
 /* Estilo para el contenedor general */
 .container {
