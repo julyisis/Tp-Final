@@ -36,38 +36,79 @@
   </div>
     </header>
     <main>
-        <section class="contact-form">
-            <h2>Formulario de Contacto</h2>
-            <p>¿Tienes alguna pregunta o necesitas más información? ¡Estamos aquí para ayudarte!</p>
+        <section class="contact-form mb-5 px-3 px-md-5">
+            <h2 class="text-center mb-4 text-secondary">Formulario de Contacto</h2>
+            <p class="text-center text-secondary mb-4">
+              ¿Tienes alguna pregunta o necesitas más información? ¡Estamos aquí para ayudarte!
+            </p>
             <form action="#" method="POST">
-                <label for="name">Nombre:</label>
-                <input type="text" id="name" name="name" required placeholder="Escribe tu nombre">
-    
-                <label for="email">Correo Electrónico:</label>
-                <input type="email" id="email" name="email" required placeholder="Escribe tu correo electrónico">
-    
-                <label for="message">Mensaje:</label>
-                <textarea id="message" name="message" required placeholder="Escribe tu mensaje"></textarea>
-    
-                <button class="btn" type="submit">Enviar</button>
+              <div class="mb-3">
+                <label for="name" class="form-label">Nombre:</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="form-control"
+                  required
+                  placeholder="Escribe tu nombre"
+                >
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Correo Electrónico:</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-control"
+                  required
+                  placeholder="Escribe tu correo electrónico"
+                >
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Mensaje:</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  class="form-control"
+                  rows="4"
+                  required
+                  placeholder="Escribe tu mensaje"
+                ></textarea>
+              </div>
+              <div class="text-center">
+                <button class="btn btn-primary" type="submit">Enviar</button>
+              </div>
             </form>
-        </section>
-
-        <section class="contact-info">
-            <h2>Información de Contacto</h2>
-            <p>Si prefieres ponerte en contacto directamente con nosotros, utiliza los siguientes medios:</p>
-            <ul>
-                <li><strong>Teléfono:</strong> 123-456-7890</li>
-                <li><strong>Correo Electrónico:</strong> contacto@idwsa.com</li>
-                <li><strong>Dirección:</strong> Calle Ficticia 123, Ciudad, País</li>
+          </section>
+    
+          <!-- Información de Contacto -->
+          <section class="contact-info mb-5 px-3 px-md-5">
+            <h2 class="text-center mb-4 text-secondary">Información de Contacto</h2>
+            <p class="text-center text-secondary mb-4">
+              Si prefieres ponerte en contacto directamente con nosotros, utiliza los siguientes medios:
+            </p>
+            <ul class="list-unstyled text-center text-secondary">
+              <li>Teléfono: 123-456-7890</li>
+              <li>Correo Electrónico: contacto@idwsa.com</li>
+              <li>Dirección: Calle Ficticia 123, Ciudad, País</li>
             </ul>
-        </section>
-
-        <div class="contact-ubi">
-            <h2>Ubicación</h2>
-            <p>Si quieres visitarnos, puedes encontrarnos aqui</p>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1240.8462099084309!2d-58.022342211229535!3d-31.38215132422908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95ade8161e0ef8c7%3A0x732306b63f61c0e2!2sFacultad%20de%20Ciencias%20de%20la%20Administraci%C3%B3n%20(UNER)!5e0!3m2!1ses!2sar!4v1744758655303!5m2!1ses!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
+          </section>
+    
+          <!-- Ubicación -->
+          <section class="contact-ubi mb-5 text-center px-3 px-md-5">
+            <h2 class="mb-3 text-secondary">Ubicación</h2>
+            <p class="text-secondary mb-3">
+              Si quieres visitarnos, puedes encontrarnos aquí
+            </p>
+            <div class="ratio ratio-16x9 mx-auto" style="max-width:700px;">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1240.8462099084309!2d-58.022342211229535!3d-31.38215132422908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95ade8161e0ef8c7%3A0x732306b63f61c0e2!2sFacultad%20de%20Ciencias%20de%20la%20Administraci%C3%B3n%20(UNER)!5e0!3m2!1ses!2sar!4v1744758655303!5m2!1ses!2sar"
+                allowfullscreen
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </section>
     </main>
     <footer>
         <div class="footer-content">
