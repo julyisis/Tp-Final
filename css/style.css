@@ -77,7 +77,6 @@ section {
     margin-bottom: 2rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
 /* Imágenes de los salones */
 .imgSalon,
 .imgSalon2,
@@ -94,6 +93,7 @@ section p {
     font-size: 1rem;
     margin-bottom: 1rem;
 }
+
 
 /* Estilos para el formulario de contacto */
 .contact-form {

@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-      <!---
+ <!---
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  
     <link rel="stylesheet" href="./css/style-n.css">
-    -->
-    <!---
+
+  -->
     <link rel="stylesheet" href="./css/footer.css">
     
     <!- Bootstrap -->
@@ -18,6 +19,19 @@
     <title>El reino de las fiestas</title>
 </head>
 <body>
+
+    <header>
+        <img src="img/Component 1.png" alt="logo" class="logo">
+        <h1 class="tituloheader"> El reino de las fiestas </h1>
+        <nav>
+            
+            <ul class="ulheader">
+                
+                <li><a class="aheader" href="./nosotros.html">Sobre nosotros</a></li>
+                <li><a class="aheader" href="./contact.html">Contacto</a></li>
+            </ul>
+        </nav>
+
     <header class="bg-primary text-white  shadow rounded-bottom">
         <div class="container-fluid d-flex justify-content-between align-items-center">
 
@@ -40,67 +54,80 @@
     </nav>
 
   </div>
+
     </header>
-        <main>
-            <div class="container">
-                <h2>Salones para tus Fiestas</h2>
-        
-                <section class="Salon">
-                    <img src="img/descarga (1).jpeg" alt="imagen salon1" class="imgSalon">
-                    <p>
-                        Salon Tardes de Verano
-                    </p>
-                    <a href="salon1.html"><div class="btn">Mostrar</div></a>
-                </section>
-        
-                <section class="Salon2">
-                    <img src="img/descarga (3).jpeg" alt="imagen salon2" class="imgSalon2">
-                    <p>
-                        Salón Noche de Luna
-                    </p>
-                    <a href="salon2.html"><div class="btn">Mostrar</div></a>
-                </section>
-        
-                <section class="Salon3">
-                    <img src="img/Instagram.jpeg" alt="imagen salon3" class="imgSalon3">
-                    <p>
-                        Salón Campos soñados
-                    </p>
-                    <a href="salon3.html"><div class="btn">Mostrar</div></a>
-                </section>
-        
-                <section class="Salon4">
-                    <img src="img/descarga (2).jpeg" alt="imagen salon4" class="imgSalon">
-                    <p>
-                        Salon principal infantil
-                    </p>
-                    <a href="salon4.html"><div class="btn">Mostrar</div></a>
-                </section>
+    <main class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Salones para tus Fiestas</h2>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100">
+                    <img src="img/descarga (1).jpeg" class="card-img-top" alt="imagen salon1">
+                    <div class="card-body text-center">
+                        <p class="card-text">Salón Tardes de Verano</p>
+                        <a href="salon1.html" class="btn btn-primary">Mostrar</a>
+                    </div>
+                </div>
             </div>
-        </main>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100">
+                    <img src="img/descarga (3).jpeg" class="card-img-top" alt="imagen salon2">
+                    <div class="card-body text-center">
+                        <p class="card-text">Salón Noche de Luna</p>
+                        <a href="salon2.html" class="btn btn-primary">Mostrar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100">
+                    <img src="img/Instagram.jpeg" class="card-img-top" alt="imagen salon3">
+                    <div class="card-body text-center">
+                        <p class="card-text">Salón Campos Soñados</p>
+                        <a href="salon3.html" class="btn btn-primary">Mostrar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100">
+                    <img src="img/descarga (2).jpeg" class="card-img-top" alt="imagen salon4">
+                    <div class="card-body text-center">
+                        <p class="card-text">Salón Principal Infantil</p>
+                        <a href="salon4.html" class="btn btn-primary">Mostrar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+    
+    
     <footer>
         <div class="footer-content">
             <div>
-              <h4>Enlaces útiles</h4>
-              <ul>
+            <h4>Enlaces útiles</h4>
+            <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="nosotros.html">Institucional</a></li>
                 <li><a href="contact.html">Contacto</a></li>
-              </ul>
+            </ul>
             </div>
             <div>
-              <h4>Redes Sociales</h4>
-              <ul>
+            <h4>Redes Sociales</h4>
+            <ul>
                 <li><a href="#">Facebook</a></li>
                 <li><a href="#">Instagram</a></li>
                 <li><a href="#">WhatsApp</a></li>
-              </ul>
+            </ul>
             </div>
-          </div>
-          <p class="copyright">
+            </div>
+        <p class="copyright">
             &copy; 2025 IDW S.A. - Todos los derechos reservados.
-          </p>  
-       
+        </p>  
+    
     </footer>
 </body>
 </html>
