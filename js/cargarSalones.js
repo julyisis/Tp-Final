@@ -46,7 +46,7 @@ window.mostrarSalon = function(id) {
     const html = `
         <div class="row">
             <div class="col-md-6">
-                <img src="${salon.imagen}" alt="Imagen de ${salon.nombre}" class="img-fluid rounded">
+                <img src="${salon.id == 1 || salon.id == 2 || salon.id == 3 ? './admin'+salon.imagen.slice(1) : salon.imagen}" alt="Imagen de ${salon.nombre}" class="img-fluid rounded">
             </div>
             <div class="col-md-6">
                 <h4>${salon.nombre}</h4>
