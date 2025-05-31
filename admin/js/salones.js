@@ -1,6 +1,6 @@
 // salones.js
 import { getSalones, saveSalones, deleteSalon, getServicios } from './storage.js';
-
+let imagenBase64 = "";
 // Renderiza la tabla de salones con filtros
 export function renderTabla() {
     const salones = getSalones();
@@ -32,6 +32,7 @@ export function renderTabla() {
                 <td>${salon.ubicacion}</td>
                 <td>$${salon.precio.toFixed(2)}</td>
                 <td>${serviciosTexto}</td>
+                <td>${salon.imagen ? `<img src="${salon.imagen}" alt="Imagen" style="max-width: 100px;">` : 'Sin imagen'}</td>
                 <td>
                     <button class="btn btn-warning btn-sm" onclick="editarSalon(${salon.id})">Editar</button>
                     <button class="btn btn-danger btn-sm" onclick="eliminarSalon(${salon.id})">Eliminar</button>
@@ -39,6 +40,16 @@ export function renderTabla() {
             `;
             tbody.appendChild(row);
         });
+}
+
+function getBase64FromFile(file) {
+    return new Promise((resolve, reject) => {
+        if (!file) return resolve(null);
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+    });
 }
 
 // Maneja guardar salón
@@ -53,6 +64,7 @@ export function setupFormulario() {
         const precio = parseFloat(document.getElementById("precio").value);
         const descripcion = document.getElementById("descripcion").value;
         const serviciosSeleccionados = Array.from(document.querySelectorAll('#serviciosCheckboxes input:checked')).map(cb => parseInt(cb.value));
+        const imagenInput = document.getElementById("imagen");
 
         const nuevoSalon = {
             id: id ? parseInt(id) : Date.now(),
@@ -61,7 +73,8 @@ export function setupFormulario() {
             ubicacion,
             precio,
             descripcion,
-            servicios: serviciosSeleccionados
+            servicios: serviciosSeleccionados,
+            imagen: imagenBase64 || ""
         };
 
         let salones = getSalones();
@@ -76,6 +89,19 @@ export function setupFormulario() {
         renderTabla();
         bootstrap.Modal.getInstance(document.getElementById("salonModal")).hide();
     });
+
+    document.getElementById("imagen").addEventListener("change", async function (e) {
+    const file = e.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function () {
+            imagenBase64 = reader.result;
+        };
+        reader.readAsDataURL(file);
+    } else {
+        imagenBase64 = "";
+    }
+});
 }
 
 // Elimina un salón
@@ -97,6 +123,20 @@ window.editarSalon = function(id) {
     document.getElementById("ubicacion").value = salon.ubicacion;
     document.getElementById("precio").value = salon.precio;
     document.getElementById("descripcion").value = salon.descripcion;
+
+    const input = document.getElementById("imagen");
+    const previewExistente = input.nextElementSibling;
+    if (previewExistente && previewExistente.tagName === "IMG") {
+        previewExistente.remove();
+    }
+
+    if (salon.imagen) {
+    const preview = document.createElement("img");
+    preview.src = salon.imagen;
+    preview.style.maxWidth = "100px";
+    const input = document.getElementById("imagen");
+    input.insertAdjacentElement("afterend", preview);
+}
 
     const checkboxes = document.querySelectorAll('#serviciosCheckboxes input');
     checkboxes.forEach(cb => {
@@ -135,6 +175,8 @@ export function setupFiltros() {
         renderTabla();
     });
 }
+
+
 
 // Inicializar todo
 export function initSalones() {

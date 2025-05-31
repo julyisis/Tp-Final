@@ -43,52 +43,26 @@
 </header>
 
     <main class="py-5">
-    <div class="container">
-        <h2 class="text-center mb-5">Salones para tus Fiestas</h2>
-
-        <div class="row g-4">
-            <div class="col-md-6 col-lg-3">
-                <div class="card h-100">
-                    <img src="img/descarga (1).jpeg" class="card-img-top h-50" alt="imagen salon1">
-                    <div class="card-body text-center">
-                        <p class="card-text">Salón Tardes de Verano</p>
-                        <a href="salon1.html" class="btn btn-primary">Mostrar</a>
-                    </div>
-                </div>
+    <div class="container" id="salones">
+    
+        
+    </div>
+    <!-- Modal de información de salón -->
+        <div class="modal fade" id="infoSalonModal" tabindex="-1" aria-labelledby="infoSalonModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="infoSalonModalLabel">Detalles del salón</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
             </div>
-
-            <div class="col-md-6 col-lg-3">
-                <div class="card h-100">
-                    <img src="img/descarga (3).jpeg" class="card-img-top h-50" alt="imagen salon2">
-                    <div class="card-body text-center">
-                        <p class="card-text">Salón Noche de Luna</p>
-                        <a href="salon2.html" class="btn btn-primary">Mostrar</a>
-                    </div>
-                </div>
+            <div class="modal-body" id="infoSalonBody">
+                <!-- Se llenará dinámicamente -->
             </div>
-
-            <div class="col-md-6 col-lg-3">
-                <div class="card h-100">
-                    <img src="img/Instagram.jpeg" class="card-img-top h-50" alt="imagen salon3">
-                    <div class="card-body text-center">
-                        <p class="card-text">Salón Campos Soñados</p>
-                        <a href="salon3.html" class="btn btn-primary">Mostrar</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-3">
-                <div class="card h-100">
-                    <img src="img/descarga (2).jpeg" class="card-img-top h-50" alt="imagen salon4">
-                    <div class="card-body text-center">
-                        <p class="card-text">Salón Principal Infantil</p>
-                        <a href="salon4.html" class="btn btn-primary">Mostrar</a>
-                    </div>
-                </div>
             </div>
         </div>
-    </div>
-</main>
+        </div>
+
+    </main>
     
     
     <footer class="bg-dark text-light py-5">
@@ -133,6 +107,9 @@
     </div>
   </div>
 </footer>
+
+<script type="module" src="./admin/js/storage.js"></script>
+<script type="module" src="./js/cargarSalones.js"></script>
 
 </body>
 </html>
