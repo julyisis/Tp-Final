@@ -1,0 +1,53 @@
+<h1 class="mb-4">Servicios Disponibles</h1>
+
+<!-- Botón para agregar nuevo servicio -->
+<button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#servicioModal">
+    Agregar Nuevo Servicio
+</button>
+
+<!-- Tabla de servicios -->
+<div class="table-responsive">
+    <table class="table table-striped" id="serviciosTable">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="serviciosBody">
+            <!-- Servicios se renderizan dinámicamente -->
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal para agregar/editar servicio -->
+<div class="modal fade" id="servicioModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalTitleServicio">Agregar Servicio</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <form id="servicioForm">
+          <input type="hidden" id="servicioId">
+          <div class="mb-3">
+            <label for="nombreServicio" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombreServicio" required>
+          </div>
+          <div class="mb-3">
+            <label for="precioServicio" class="form-label">Precio</label>
+            <input type="number" class="form-control" id="precioServicio" required>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" id="saveServicio">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
