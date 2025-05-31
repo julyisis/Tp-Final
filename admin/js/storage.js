@@ -8,7 +8,7 @@ const INITIAL_DATA = {
             precio: 1500,
             descripcion: "Salón amplio con iluminación natural",
             servicios: [1, 2],
-            imagen: "./admin/img/salon1.jpeg"
+            imagen: "./img/salon1.jpeg"
         },
         {
             id: 2,
@@ -18,7 +18,7 @@ const INITIAL_DATA = {
             precio: 2500,
             descripcion: "Salón exclusivo con terraza privada",
             servicios: [2, 3],
-            imagen: "./admin/img/salon2.jpeg"
+            imagen: "./img/salon2.jpeg"
         },
         {
             id: 3,
@@ -28,7 +28,7 @@ const INITIAL_DATA = {
             precio: 1800,
             descripcion: "Salón con vista al jardín y acceso al aire libre",
             servicios: [1, 3],
-            imagen: "./admin/img/salon3.jpeg"
+            imagen: "./img/salon3.jpeg"
         }
     ],
     servicios: [
