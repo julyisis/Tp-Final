@@ -2,7 +2,7 @@ const contenido = document.getElementById("contenido");
 const links = document.querySelectorAll("#menu a");
 
 async function cargarVista(vista) {
-    const res = await fetch(`./admin/vistas/${vista}.html`);
+    const res = await fetch(`./vistas/${vista}.html`);
     const html = await res.text();
     contenido.innerHTML = html;
 
