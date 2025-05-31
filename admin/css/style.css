@@ -1,6 +1,27 @@
-body {
+body { 
     background-color: #f8f9fa;
+    display: flex; 
+    min-height: 100vh; 
 }
+#menu { width: 250px; 
+    background-color: #343a40; 
+    color: white; 
+    padding-top: 2rem; 
+}
+#menu a { 
+    color: white; 
+    display: block; 
+    padding: 1rem; 
+    text-decoration: none; 
+}
+#menu a:hover {
+     background-color: #495057; 
+    }
+#contenido { 
+    flex-grow: 1;
+     padding: 2rem; 
+    }
+
 
 .container {
     max-width: 1200px;
