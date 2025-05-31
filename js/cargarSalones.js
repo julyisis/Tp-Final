@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     col.innerHTML = `
       <div class="card h-100">
-        <img src="${salon.imagen}" class="card-img-top h-50" alt="imagen ${salon.nombre}">
+        <img src="${salon.id == 1 || salon.id == 2 || salon.id == 3 ? './admin'+salon.imagen.slice(1) : ''}" class="card-img-top h-50" alt="imagen ${salon.nombre}">
         <div class="card-body text-center">
           <p class="card-text">${salon.nombre}</p>
           <a href="#" class="btn btn-primary" onclick="mostrarSalon(${salon.id})">Mostrar</a>
