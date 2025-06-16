@@ -14,9 +14,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const col = document.createElement("div");
     col.className = "col-md-6 col-lg-3";
 
+    const imagenSrc = salon.imagen.startsWith("data:") ? salon.imagen : './admin' + salon.imagen.slice(1);
+
     col.innerHTML = `
       <div class="card h-100">
-        <img src="${salon.id == 1 || salon.id == 2 || salon.id == 3 ? './admin'+salon.imagen.slice(1) : salon.imagen}" class="card-img-top h-50" alt="imagen ${salon.nombre}">
+        <img src="${imagenSrc}" class="card-img-top h-50" alt="imagen ${salon.nombre}">
         <div class="card-body text-center">
           <p class="card-text">${salon.nombre}</p>
           <a href="#" class="btn btn-primary" onclick="mostrarSalon(${salon.id})">Mostrar</a>
@@ -43,10 +45,12 @@ window.mostrarSalon = function(id) {
         return serv ? `<li>${serv.nombre} - $${serv.precio}</li>` : '';
     }).join("");
 
+    const imagenSrc = salon.imagen.startsWith("data:") ? salon.imagen : './admin' + salon.imagen.slice(1);
+
     const html = `
         <div class="row">
             <div class="col-md-6">
-                <img src="${salon.id == 1 || salon.id == 2 || salon.id == 3 ? './admin'+salon.imagen.slice(1) : salon.imagen}" alt="Imagen de ${salon.nombre}" class="img-fluid rounded">
+                <img src="${imagenSrc}" alt="Imagen de ${salon.nombre}" class="img-fluid rounded">
             </div>
             <div class="col-md-6">
                 <h4>${salon.nombre}</h4>

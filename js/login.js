@@ -15,9 +15,9 @@ document.getElementById("loginForm").addEventListener("submit", async function (
     if (!res.ok) throw new Error("Credenciales inválidas");
 
     const data = await res.json();
-    sessionStorage.setItem("accessToken", data.token);
-    sessionStorage.setItem("user", JSON.stringify(data)); 
-    window.location.href = "admin/index.html";
+    localStorage.setItem("accessToken", data.token);
+    localStorage.setItem("user", JSON.stringify(data)); 
+    window.location.href = "./admin/index.html";
   } catch (err) {
     errorDiv.textContent = err.message;
   }

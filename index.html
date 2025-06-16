@@ -1,115 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    
-       <!--- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./css/style.css">
+  <!--- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./css/style.css">
 
-    <title>El reino de las fiestas</title>
+  <title>El reino de las fiestas</title>
 </head>
+
 <body>
 
-   
 
-    <header class="header shadow">
-  <div class="container-fluid d-flex justify-content-between align-items-center">
-    <img src="img/Component 1.png" alt="logo" class="logo me-3">
-    <h1 class="h2 m-0 fw-bold fs-1">El reino de las fiestas</h1>
 
-    <nav class="navbar navbar-expand-lg">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="nav m-0">
-          <li class="nav-item">
-            <a class="custom-nav-link text-white fs-2 me-3" href="./nosotros.html">Nosotros</a>
-          </li>
-          <li class="nav-item">
-            <a class="custom-nav-link text-white fs-2 me-3" href="./contact.html">Contacto</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+  <header class="header shadow">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+      <img src="img/Component 1.png" alt="logo" class="logo me-3">
+      <h1 class="h2 m-0 fw-bold fs-1">El reino de las fiestas</h1>
 
-  </div>
-</header>
+      <nav class="navbar navbar-expand-lg">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="nav m-0">
+            <li class="nav-item">
+              <a class="custom-nav-link text-white fs-2 me-3" href="./nosotros.html">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="custom-nav-link text-white fs-2 me-3" href="./contact.html">Contacto</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
 
-    <main class="py-5">
+    </div>
+  </header>
+
+  <main class="py-5">
     <div class="container" id="salones">
-    
-        
+
+
     </div>
     <!-- Modal de información de salón -->
-        <div class="modal fade" id="infoSalonModal" tabindex="-1" aria-labelledby="infoSalonModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="infoSalonModalLabel">Detalles del salón</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-            </div>
-            <div class="modal-body" id="infoSalonBody">
-                <!-- Se llenará dinámicamente -->
-            </div>
-            </div>
+    <div class="modal fade" id="infoSalonModal" tabindex="-1" aria-labelledby="infoSalonModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="infoSalonModalLabel">Detalles del salón</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body" id="infoSalonBody">
+            <!-- Se llenará dinámicamente -->
+          </div>
         </div>
-        </div>
-
-    </main>
-    
-    
-    <footer class="bg-dark text-light py-5">
-  <div class="container">
-    <div class="row">
-      <!-- Sección 1: Sobre Nosotros -->
-      <div class="col-md-4 mb-4">
-        <h4 class="text-white">Sobre Nosotros</h4>
-        
-        <ul class="list-unstyled">
-          <li><a href="#" class="text-secondary text-decoration-none">Nuestra Historia</a></li>
-          <li><a href="#" class="text-secondary text-decoration-none">Eventos Realizados</a></li>
-          <li><a href="#" class="text-secondary text-decoration-none">Valores</a></li>
-        </ul>
-      </div>
-
-      <!-- Sección 2: Servicios -->
-      <div class="col-md-4 mb-4">
-        <h4 class="text-white">Servicios</h4>
-        
-        <ul class="list-unstyled">
-          <li><a href="#" class="text-secondary text-decoration-none">Cumpleaños</a></li>
-          <li><a href="#" class="text-secondary text-decoration-none">Animaciones</a></li>
-          <li><a href="#" class="text-secondary text-decoration-none">Decoración temática</a></li>
-        </ul>
-      </div>
-
-      <!-- Sección 3: Contacto -->
-      <div class="col-md-4 mb-4">
-        <h4 class="text-white">Contacto</h4>
-        
-        <ul class="list-unstyled">
-          <li><a href="#" class="text-secondary text-decoration-none">WhatsApp</a></li>
-          <li><a href="#" class="text-secondary text-decoration-none">Email</a></li>
-          <li><a href="#" class="text-secondary text-decoration-none">Cómo llegar</a></li>
-        </ul>
       </div>
     </div>
 
-    <div class="text-center mt-4 text-muted">
-      &copy; 2025 Mundo Mágico. Todos los derechos reservados.
-    </div>
-  </div>
-</footer>
+  </main>
 
-<script type="module" src="./admin/js/storage.js"></script>
-<script type="module" src="./js/cargarSalones.js"></script>
+
+  <footer class="bg-dark text-light py-5">
+    <div class="container">
+      <div class="row">
+        <!-- Sección 1: Sobre Nosotros -->
+        <div class="col-md-4 mb-4">
+          <h4 class="text-white">Sobre Nosotros</h4>
+
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-secondary text-decoration-none">Nuestra Historia</a></li>
+            <li><a href="#" class="text-secondary text-decoration-none">Eventos Realizados</a></li>
+            <li><a href="#" class="text-secondary text-decoration-none">Valores</a></li>
+          </ul>
+        </div>
+
+        <!-- Sección 2: Servicios -->
+        <div class="col-md-4 mb-4">
+          <h4 class="text-white">Servicios</h4>
+
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-secondary text-decoration-none">Cumpleaños</a></li>
+            <li><a href="#" class="text-secondary text-decoration-none">Animaciones</a></li>
+            <li><a href="#" class="text-secondary text-decoration-none">Decoración temática</a></li>
+          </ul>
+        </div>
+
+        <!-- Sección 3: Contacto -->
+        <div class="col-md-4 mb-4">
+          <h4 class="text-white">Contacto</h4>
+
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-secondary text-decoration-none">WhatsApp</a></li>
+            <li><a href="#" class="text-secondary text-decoration-none">Email</a></li>
+            <li><a href="#" class="text-secondary text-decoration-none">Cómo llegar</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="text-center mt-4 text-muted">
+        &copy; 2025 Mundo Mágico. Todos los derechos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="./admin/js/storage.js"></script>
+  <script type="module" src="./js/cargarSalones.js"></script>
 
 </body>
+
 </html>
