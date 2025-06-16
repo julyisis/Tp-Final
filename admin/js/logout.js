@@ -1,4 +1,5 @@
 document.getElementById("logoutBtn").addEventListener("click", () => {
-    sessionStorage.clear();
-    window.location.href = "../login.html";
+  localStorage.removeItem("user");
+  localStorage.removeItem("accessToken");
+  window.location.href = "../login.html";
 });
