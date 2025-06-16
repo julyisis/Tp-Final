@@ -25,8 +25,6 @@ export function renderTabla() {
                 return serv ? serv.nombre : "N/A";
             }).join(", ") || "";
 
-            //const imagenSrc = salon.imagen.startsWith("data:") ? salon.imagen : '/admin' + salon.imagen.slice(1);
-
             const row = document.createElement("tr");
             row.innerHTML = `
                 <td>${salon.nombre}</td>
@@ -34,7 +32,7 @@ export function renderTabla() {
                 <td>${salon.ubicacion}</td>
                 <td>$${salon.precio.toFixed(2)}</td>
                 <td>${serviciosTexto}</td>
-                <td>${imagenSrc ? `<img src="${salon.imagen}" alt="Imagen" style="max-width: 100px;">` : 'Sin imagen'}</td>
+                <td><img src="${salon.imagen}" alt="Imagen" style="max-width: 100px;"></td>
                 <td>
                     <button class="btn btn-warning btn-sm" onclick="editarSalon(${salon.id})">Editar</button>
                     <button class="btn btn-danger btn-sm" onclick="eliminarSalon(${salon.id})">Eliminar</button>
