@@ -8,13 +8,13 @@ async function cargarVista(vista) {
 
     // Lógica específica por vista
     if (vista === "salones") {
-        const { initSalones } = await import("js/salones.js");
+        const { initSalones } = await import("../js/salones.js");
         initSalones();
     } else if (vista === "servicios") {
-        const { initServicios } = await import("js/servicios.js");
+        const { initServicios } = await import("../js/servicios.js");
         initServicios();
     }else if (vista === "usuarios") {
-        const { cargarUsuarios } = await import("js/usuarios.js");
+        const { cargarUsuarios } = await import("../js/usuarios.js");
         cargarUsuarios();
     }
 }
