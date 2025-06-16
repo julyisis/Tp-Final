@@ -13,6 +13,9 @@ async function cargarVista(vista) {
     } else if (vista === "servicios") {
         const { initServicios } = await import("./servicios.js");
         initServicios();
+    }else if (vista === "usuarios") {
+        const { cargarUsuarios } = await import("./usuarios.js");
+        cargarUsuarios();
     }
 }
 
