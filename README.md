@@ -7,4 +7,6 @@ Julieta Gutierrez<br>
 Gabriel Sebastian Roman<br>
 Alejandro Petricic<br><br><br>
 ### Enlace para la vista de admin<br>
+https://julyisis.github.io/Tp-Final/login.html<br>
+<font color="red">La vista Admin, esta protegida</font><br>
 https://julyisis.github.io/Tp-Final/admin
