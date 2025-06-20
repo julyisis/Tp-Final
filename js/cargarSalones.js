@@ -1,14 +1,17 @@
-import { getSalones, getServicios } from "../admin/js/storage.js";
+import { getSalones } from "../admin/js/storage.js";
+import { configurarPresupuestoModal } from "./presupuesto.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const container = document.getElementById("salones");
+  cargarSalones();
+  configurarPresupuestoModal();
+});
 
+function cargarSalones() {
+  const container = document.getElementById("salonesContainer");
   if (!container) return;
 
   const salones = getSalones();
-
-  const row = document.createElement("div");
-  row.className = "row g-4";
+  container.innerHTML = '';
 
   salones.forEach((salon) => {
     const col = document.createElement("div");
@@ -26,13 +29,9 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     `;
 
-    row.appendChild(col);
+    container.appendChild(col);
   });
-
-  // Limpiar el contenedor y agregar el nuevo contenido
-  container.innerHTML = `<h2 class="text-center mb-5">Salones para tus Fiestas</h2>`;
-  container.appendChild(row);
-});
+}
 
 
 window.mostrarSalon = function(id) {
