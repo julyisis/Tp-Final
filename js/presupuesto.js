@@ -9,7 +9,6 @@ export function configurarPresupuestoModal() {
   const calcularBtn = document.getElementById('calcularBtn');
   
   // Verificar existencia de elementos críticos
-  const descargarBtn = document.getElementById('descargarBtn');
   const resumenPresupuesto = document.getElementById('resumenPresupuesto');
   const detallePresupuesto = document.getElementById('detallePresupuesto');
   const totalPresupuesto = document.getElementById('totalPresupuesto');
@@ -20,7 +19,6 @@ export function configurarPresupuestoModal() {
     return;
   }
 
-  // Llenar select de salones
   salones.forEach(salon => {
     const option = document.createElement('option');
     option.value = salon.id;
@@ -28,7 +26,6 @@ export function configurarPresupuestoModal() {
     selectSalon.appendChild(option);
   });
 
-  // Llenar select de temáticas
   const tematicas = ['Infantil', 'Adultos', 'Fiesta Blanca', 'Casamiento', 'Cumpleaños', 'Otro'];
   tematicas.forEach(tematica => {
     const option = document.createElement('option');
@@ -37,20 +34,49 @@ export function configurarPresupuestoModal() {
     selectTematica.appendChild(option);
   });
 
-  // Llenar checkboxes de servicios
-  servicios.forEach(servicio => {
-    const div = document.createElement('div');
-    div.className = 'form-check';
-    div.innerHTML = `
-      <input class="form-check-input" type="checkbox" value="${servicio.id}" id="servicio-${servicio.id}">
-      <label class="form-check-label" for="servicio-${servicio.id}">
-        ${servicio.nombre} - $${servicio.precio}
-      </label>
-    `;
-    serviciosContainer.appendChild(div);
-  });
+  // Función para actualizar servicios disponibles según salón seleccionado
+  function actualizarServiciosDisponibles() {
+    const salonId = parseInt(selectSalon.value);
+    const salon = salones.find(s => s.id === salonId);
+    
+    // Limpiar contenedor de servicios
+    serviciosContainer.innerHTML = '';
+    
+    if (!salon || !salon.servicios) {
+      serviciosContainer.innerHTML = '<p>Este salón no tiene servicios disponibles</p>';
+      return;
+    }
+    
+    // Filtrar servicios y mostrar solo los disponibles para este salón
+    const serviciosDisponibles = servicios.filter(servicio => 
+      salon.servicios.includes(servicio.id)
+    );
+    
+    if (serviciosDisponibles.length === 0) {
+      serviciosContainer.innerHTML = '<p>Este salón no tiene servicios disponibles</p>';
+      return;
+    }
+    
+    serviciosDisponibles.forEach(servicio => {
+      const div = document.createElement('div');
+      div.className = 'form-check mb-2';
+      div.innerHTML = `
+        <input class="form-check-input" type="checkbox" value="${servicio.id}" id="servicio-${servicio.id}">
+        <label class="form-check-label" for="servicio-${servicio.id}">
+          ${servicio.nombre} - $${servicio.precio}
+        </label>
+      `;
+      serviciosContainer.appendChild(div);
+    });
+  }
 
-  // Configurar evento de cálculo
+  selectSalon.addEventListener('change', actualizarServiciosDisponibles);
+  
+  if (salones.length > 0) {
+    actualizarServiciosDisponibles();
+  }
+
+  //Evento de cálculo
   calcularBtn.addEventListener('click', () => {
     try {
       const salonId = parseInt(selectSalon.value);
@@ -61,23 +87,20 @@ export function configurarPresupuestoModal() {
           const servicioId = parseInt(checkbox.value);
           return servicios.find(s => s.id === servicioId);
         })
-        .filter(servicio => servicio !== undefined); // Filtrar servicios no encontrados
+        .filter(servicio => servicio !== undefined);
       
       const fechaEvento = document.getElementById('fechaEvento')?.value;
       const nombreCliente = document.getElementById('nombreCliente')?.value;
       const apellidoCliente = document.getElementById('apellidoCliente')?.value;
       
-      // Validación de campos
       if (!salon || !fechaEvento || !nombreCliente || !apellidoCliente || !tematica) {
         alert('Por favor complete todos los campos obligatorios');
         return;
       }
 
-      // Calcular total
       let total = salon.precio;
       serviciosSeleccionados.forEach(serv => total += serv.precio);
-
-      // Mostrar resumen
+      
       detallePresupuesto.innerHTML = `
         <p><strong>Cliente:</strong> ${apellidoCliente}, ${nombreCliente}</p>
         <p><strong>Salón:</strong> ${salon.nombre} - $${salon.precio}</p>
@@ -86,12 +109,11 @@ export function configurarPresupuestoModal() {
         ${serviciosSeleccionados.length > 0 ? 
           `<p><strong>Servicios:</strong></p><ul>${
             serviciosSeleccionados.map(s => `<li>${s.nombre} - $${s.precio}</li>`).join('')
-          }</ul>` : ''}
+          }</ul>` : '<p>No se seleccionaron servicios adicionales</p>'}
       `;
       
       totalPresupuesto.textContent = `$${total}`;
       
-      // Mostrar elementos (con verificación adicional)
       if (resumenPresupuesto) resumenPresupuesto.classList.remove('d-none');
       
       // Crear y guardar presupuesto
