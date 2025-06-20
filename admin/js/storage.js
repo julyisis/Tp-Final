@@ -104,4 +104,15 @@ export function deleteServicio(id) {
     saveServicios(servicios);
 }
 
+export function getPresupuestos() {
+  const presupuestos = localStorage.getItem('presupuestos');
+  return presupuestos ? JSON.parse(presupuestos) : [];
+}
+
+export function guardarPresupuesto(presupuesto) {
+  const presupuestos = getPresupuestos();
+  presupuestos.push(presupuesto);
+  localStorage.setItem('presupuestos', JSON.stringify(presupuestos));
+}
+
 initStorage();

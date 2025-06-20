@@ -46,10 +46,15 @@
   </header>
 
   <main class="py-5">
-    <div class="container" id="salones">
-
-
+  <div class="container" id="salones">
+    <h2 class="text-center mb-5">Salones para tus Fiestas</h2>
+    <div class="text-center mb-4">
+      <button class="btn btn-lg btn-success" data-bs-toggle="modal" data-bs-target="#presupuestoModal">
+        <i class="bi bi-file-earmark-text"></i> Quiero un presupuesto
+      </button>
     </div>
+    <div class="row g-4" id="salonesContainer"></div>
+  </div>
     <!-- Modal de información de salón -->
     <div class="modal fade" id="infoSalonModal" tabindex="-1" aria-labelledby="infoSalonModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -60,6 +65,64 @@
           </div>
           <div class="modal-body" id="infoSalonBody">
             <!-- Se llenará dinámicamente -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="presupuestoModal" tabindex="-1" aria-labelledby="presupuestoModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="presupuestoModalLabel">Crear Presupuesto</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <form id="formPresupuesto">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="nombreCliente" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" id="nombreCliente" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="apellidoCliente" class="form-label">Apellido</label>
+                  <input type="text" class="form-control" id="apellidoCliente" required>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="selectSalon" class="form-label">Salón</label>
+                <select class="form-select" id="selectSalon" required>
+                  <option value="" selected disabled>Seleccione...</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="selectTematica" class="form-label">Temática</label>
+                <select class="form-select" id="selectTematica" required>
+                  <option value="" selected disabled>Seleccione...</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="fechaEvento" class="form-label">Fecha del evento</label>
+                <input type="date" class="form-control" id="fechaEvento" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Servicios adicionales</label>
+                <div id="serviciosContainer" class="border p-3 rounded">
+                  <!-- Se llenará dinámicamente -->
+                </div>
+              </div>
+            </form>
+            <div class="alert alert-info mt-3 d-none" id="resumenPresupuesto">
+              <h5>Resumen del Presupuesto</h5>
+              <div id="detallePresupuesto"></div>
+              <hr>
+              <h5 class="text-end">Total: <span id="totalPresupuesto">$0</span></h5>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-primary" id="calcularBtn">Calcular</button>
           </div>
         </div>
       </div>
@@ -113,6 +176,7 @@
 
   <script type="module" src="./admin/js/storage.js"></script>
   <script type="module" src="./js/cargarSalones.js"></script>
+  <script type="module" src="./js/presupuesto.js"></script>
 
 </body>
 
