@@ -1,7 +1,33 @@
-// salones.js
 import { getSalones, saveSalones, deleteSalon, getServicios } from './storage.js';
+
 let imagenBase64 = "";
-// Renderiza la tabla de salones con filtros
+let imagenEditada = false;
+
+function limpiarFormulario() {
+    document.getElementById("salonId").value = "";
+    document.getElementById("nombre").value = "";
+    document.getElementById("capacidad").value = "";
+    document.getElementById("ubicacion").value = "";
+    document.getElementById("precio").value = "";
+    document.getElementById("descripcion").value = "";
+    
+    // Limpiar checkboxes de servicios
+    document.querySelectorAll('#serviciosCheckboxes input').forEach(cb => {
+        cb.checked = false;
+    });
+    
+    // Limpiar imagen
+    document.getElementById("imagen").value = "";
+    imagenBase64 = "";
+    
+    // Eliminar preview de imagen si existe
+    const input = document.getElementById("imagen");
+    const previewExistente = input.nextElementSibling;
+    if (previewExistente && previewExistente.tagName === "IMG") {
+        previewExistente.remove();
+    }
+}
+
 export function renderTabla() {
     const salones = getSalones();
     const servicios = getServicios();
@@ -64,7 +90,8 @@ export function setupFormulario() {
         const precio = parseFloat(document.getElementById("precio").value);
         const descripcion = document.getElementById("descripcion").value;
         const serviciosSeleccionados = Array.from(document.querySelectorAll('#serviciosCheckboxes input:checked')).map(cb => parseInt(cb.value));
-        const imagenInput = document.getElementById("imagen");
+
+        const salonActual = id ? getSalones().find(s => s.id === parseInt(id)) : null;
 
         const nuevoSalon = {
             id: id ? parseInt(id) : Date.now(),
@@ -74,7 +101,7 @@ export function setupFormulario() {
             precio,
             descripcion,
             servicios: serviciosSeleccionados,
-            imagen: imagenBase64 || ""
+            imagen: imagenEditada ? imagenBase64 : (salonActual?.imagen || "")
         };
 
         let salones = getSalones();
@@ -88,20 +115,23 @@ export function setupFormulario() {
         saveSalones(salones);
         renderTabla();
         bootstrap.Modal.getInstance(document.getElementById("salonModal")).hide();
+        limpiarFormulario();
     });
 
     document.getElementById("imagen").addEventListener("change", async function (e) {
-    const file = e.target.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function () {
-            imagenBase64 = reader.result;
-        };
-        reader.readAsDataURL(file);
-    } else {
-        imagenBase64 = "";
-    }
-});
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function () {
+                imagenBase64 = reader.result;
+                imagenEditada = true; // Marcar que se editó la imagen
+            };
+            reader.readAsDataURL(file);
+        } else {
+            imagenBase64 = "";
+            imagenEditada = false;
+        }
+    });
 }
 
 // Elimina un salón
@@ -117,6 +147,8 @@ window.editarSalon = function(id) {
     const salon = getSalones().find(s => s.id === id);
     if (!salon) return;
 
+    imagenEditada = false;
+    
     document.getElementById("salonId").value = salon.id;
     document.getElementById("nombre").value = salon.nombre;
     document.getElementById("capacidad").value = salon.capacidad;
@@ -131,12 +163,15 @@ window.editarSalon = function(id) {
     }
 
     if (salon.imagen) {
-    const preview = document.createElement("img");
-    preview.src = salon.imagen;
-    preview.style.maxWidth = "100px";
-    const input = document.getElementById("imagen");
-    input.insertAdjacentElement("afterend", preview);
-}
+        const preview = document.createElement("img");
+        preview.src = salon.imagen;
+        preview.style.maxWidth = "100px";
+        preview.classList.add("mt-2");
+        input.insertAdjacentElement("afterend", preview);
+        imagenBase64 = salon.imagen;
+    } else {
+        imagenBase64 = "";
+    }
 
     const checkboxes = document.querySelectorAll('#serviciosCheckboxes input');
     checkboxes.forEach(cb => {
@@ -175,8 +210,6 @@ export function setupFiltros() {
         renderTabla();
     });
 }
-
-
 
 // Inicializar todo
 export function initSalones() {
