@@ -1,4 +1,4 @@
-import { getSalones } from "../admin/js/storage.js";
+import { getSalones,getServicios } from "../admin/js/storage.js";
 import { configurarPresupuestoModal } from "./presupuesto.js";
 
 document.addEventListener("DOMContentLoaded", () => {
